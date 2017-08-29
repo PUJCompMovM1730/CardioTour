@@ -1,0 +1,42 @@
+package com.example.juancho.navegacionproyecto;
+
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
+public class ActivityHome extends AppCompatActivity {
+    Button botonBuscar;
+    Button botonAmigos;
+    Button botonPerfil;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_home);
+        botonBuscar = (Button) findViewById(R.id.botonBuscar3);
+        botonBuscar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), ActividadBuscar.class);
+                startActivity(intent);
+            }
+        });
+        botonAmigos = (Button) findViewById(R.id.botonAmigos3);
+        botonAmigos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), ActividadMisAmigos.class);
+                startActivity(intent);
+            }
+        });
+        botonPerfil = (Button) findViewById(R.id.botonPerfil3);
+        botonPerfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), ActividadMiPerfil.class);
+                startActivity(intent);
+            }
+        });
+    }
+}
